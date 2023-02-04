@@ -1,11 +1,11 @@
-const getGitConfigPath = require('git-config-path');
-const githubUsername = require('github-username');
-const parseGitConfig = require('parse-git-config');
-const which = require('which');
+import getGitConfigPath from 'git-config-path';
+import githubUsername from 'github-username';
+import parseGitConfig from 'parse-git-config';
+import which from 'which';
+import getConfig from './getConfigs.mjs';
 
-const config = require('./helpers/getConfigs.js');
-
-module.exports = async () => {
+const getDefaultLibraryParams = async () => {
+  const config = getConfig();
   const defaults = {
     name: '',
     description: 'Made with @dxsixpc/create',
@@ -51,3 +51,5 @@ module.exports = async () => {
 
   return defaults;
 };
+
+export default getDefaultLibraryParams;

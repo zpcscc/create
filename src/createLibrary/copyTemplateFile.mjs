@@ -1,12 +1,12 @@
-const path = require('path');
-const mkdirp = require('make-dir');
-const fs = require('fs-extra');
+import fs from 'fs-extra';
+import mkdirp from 'make-dir';
+import path from 'path';
 
 // 模板文件黑名单。不需要导出的具体文件
 const templateBlacklist = new Set(['.git', 'dist', 'package-lock.json']);
 
 // 复制模板文件
-module.exports.copyTemplateFile = async (opts) => {
+const copyTemplateFile = async (opts) => {
   const { file, source, dest, info } = opts;
   const { name, description, repository, license, author } = info || {};
 
@@ -40,3 +40,5 @@ module.exports.copyTemplateFile = async (opts) => {
   }
   return fileRelativePath;
 };
+
+export default copyTemplateFile;

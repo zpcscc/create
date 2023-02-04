@@ -1,7 +1,7 @@
-const execa = require('execa');
-const pEachSeries = require('p-each-series');
+import { execa } from 'execa';
+import pEachSeries from '../helpers/pEachSeries.mjs';
 
-module.exports.initGitRepo = async (opts) => {
+const initGitRepo = async (opts) => {
   const { dest } = opts;
 
   const commands = [
@@ -21,3 +21,5 @@ module.exports.initGitRepo = async (opts) => {
     return execa(cmd, args, { cwd });
   });
 };
+
+export default initGitRepo;

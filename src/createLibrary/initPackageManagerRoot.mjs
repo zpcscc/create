@@ -1,7 +1,7 @@
-const pEachSeries = require('p-each-series');
-const execa = require('execa');
+import { execa } from 'execa';
+import pEachSeries from '../helpers/pEachSeries.mjs';
 
-module.exports.initPackageManagerRoot = async (opts) => {
+const initPackageManagerRoot = async (opts) => {
   const { dest, info } = opts;
 
   const commands = [
@@ -16,3 +16,5 @@ module.exports.initPackageManagerRoot = async (opts) => {
     return execa(cmd, args, { cwd });
   });
 };
+
+export default initPackageManagerRoot;

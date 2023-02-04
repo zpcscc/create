@@ -1,6 +1,6 @@
 {
   "name": "@dxsixpc/create",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "创建应用脚手架",
   "homepage": "https://dxsixpc.github.io/create",
   "repository": {
@@ -12,16 +12,12 @@
     "name": "dxsixpc",
     "email": "desixpc@gmail.com"
   },
-  "main": "index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "src/index.mjs",
   "bin": {
-    "@dxsixpc/create": "index.js"
+    "@dxsixpc/create": "src/index.mjs"
   },
   "files": [
-    "dist",
-    "scripts",
-    "index.js"
+    "dist"
   ],
   "scripts": {
     "build": "father build",
@@ -58,21 +54,32 @@
       "path": "@commitlint/cz-commitlint"
     }
   },
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "commander": "^10.0.0",
+    "conf": "^11.0.1",
+    "execa": "^6.1.0",
+    "fs-extra": "^11.1.0",
+    "git-config-path": "^2.0.0",
+    "github-username": "^7.0.0",
+    "globby": "^13.1.3",
+    "inquirer": "^8.2.5",
+    "make-dir": "^3.0.2",
+    "ora": "^6.1.2",
+    "p-each-series": "^3.0.0",
+    "parse-git-config": "^3.0.0",
+    "validate-npm-package-name": "^5.0.0",
+    "which": "^3.0.0"
+  },
   "devDependencies": {
     "@dxsixpc/configs": "^0.2.6",
-    "@umijs/lint": "^4.0.0",
-    "create-react-library": "^3.1.1",
     "dumi": "^2.0.2",
     "father": "^4.1.0",
-    "fs-extra": "^11.1.0",
+    "gh-pages": "^5.0.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
-  },
-  "peerDependencies": {
-    "react": ">=16.9.0",
-    "react-dom": ">=16.9.0"
   },
   "publishConfig": {
     "access": "public",

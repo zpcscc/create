@@ -1,8 +1,9 @@
-const inquirer = require('inquirer');
-const validateNpmName = require('validate-npm-package-name');
-const config = require('./helpers/getConfigs.js');
+import inquirer from 'inquirer';
+import validateNpmName from 'validate-npm-package-name';
+import getConfig from './getConfigs.mjs';
 
-module.exports = async (opts) => {
+const promptLibraryParams = async (opts) => {
+  const config = getConfig();
   if (opts.name && !validateNpmName(opts.name).validForNewPackages) {
     throw new Error(`无效的名称 "${opts.name}"`);
   }
@@ -81,3 +82,5 @@ module.exports = async (opts) => {
     git: opts.git,
   };
 };
+
+export default promptLibraryParams;
