@@ -1,0 +1,81 @@
+{
+  "name": "@dxsixpc/create",
+  "version": "0.0.1",
+  "description": "创建应用脚手架",
+  "homepage": "https://dxsixpc.github.io/create",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dxsixpc/create"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "dxsixpc",
+    "email": "desixpc@gmail.com"
+  },
+  "main": "index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "@dxsixpc/create": "index.js"
+  },
+  "files": [
+    "dist",
+    "scripts",
+    "index.js"
+  ],
+  "scripts": {
+    "build": "father build",
+    "build:watch": "father dev",
+    "commit": "git add . && git-cz",
+    "deploy": "npm run docs:build && npm run docs:deploy",
+    "dev": "dumi dev",
+    "docs:build": "dumi build",
+    "docs:deploy": "gh-pages -d docs-dist",
+    "doctor": "father doctor",
+    "prepare": "husky install && dumi setup",
+    "prepublishOnly": "father doctor && npm run build",
+    "start": "npm run dev"
+  },
+  "lint-staged": {
+    "*.{md,json}": [
+      "prettier --write --no-error-on-unmatched-pattern"
+    ],
+    "*.{css,less}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
+  "devDependencies": {
+    "@dxsixpc/configs": "^0.2.6",
+    "@umijs/lint": "^4.0.0",
+    "create-react-library": "^3.1.1",
+    "dumi": "^2.0.2",
+    "father": "^4.1.0",
+    "fs-extra": "^11.1.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  }
+}

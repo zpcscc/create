@@ -1,0 +1,42 @@
+{
+  "name": "react",
+  "version": "0.1.0",
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "source": "src/index.tsx",
+  "scripts": {
+    "build": "rollup -c",
+    "commit": "git add . && git-cz",
+    "dev": "rollup -c -w"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.9.5"
+  },
+  "devDependencies": {
+    "@dxsixpc/configs": "^0.2.6",
+    "eslint-plugin-jest": "^27.2.1",
+    "fs-extra": "^11.1.0"
+  }
+}
