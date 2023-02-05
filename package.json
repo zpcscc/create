@@ -57,7 +57,6 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.20.13",
-    "@dxsixpc/create": "^0.0.4-beta.2",
     "chalk": "^5.2.0",
     "commander": "^10.0.0",
     "conf": "^11.0.1",
@@ -75,7 +74,7 @@
     "which": "^3.0.0"
   },
   "devDependencies": {
-    "@dxsixpc/configs": "^0.2.6",
+    "@dxsixpc/configs": "^0.2.8",
     "dumi": "^2.0.2",
     "father": "^4.1.0",
     "gh-pages": "^5.0.0",
