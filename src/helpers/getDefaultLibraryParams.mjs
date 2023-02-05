@@ -1,7 +1,6 @@
 import getGitConfigPath from 'git-config-path';
 import githubUsername from 'github-username';
 import parseGitConfig from 'parse-git-config';
-import which from 'which';
 import getConfig from './getConfigs.mjs';
 
 const getDefaultLibraryParams = async () => {
@@ -10,10 +9,11 @@ const getDefaultLibraryParams = async () => {
     name: '',
     description: 'Made with @dxsixpc/create',
     author: config.get('author'),
-    repository: (info) => `${info.author}/${info.name}`,
-    license: config.get('license', 'MIT'),
+    repository: (info) => `https://github.com/${info.author}/${info.name}`,
     manager: config.get('manager', 'npm'),
     template: config.get('template', 'react-base'),
+    install: config.get('install', 'y'),
+    git: config.get('git', 'y'),
   };
 
   try {
@@ -35,15 +35,22 @@ const getDefaultLibraryParams = async () => {
 
     // 设置包管理器
     if (!config.get('manager')) {
-      if (which.sync('yarn', { nothrow: true })) {
-        defaults.manager = 'yarn';
-      }
       config.set('manager', defaults.manager);
     }
 
     // 设置模板值
     if (!config.get('template')) {
       config.set('template', defaults.template);
+    }
+
+    // 设置git值
+    if (!config.get('git')) {
+      config.set('git', defaults.git);
+    }
+
+    // 设置install值
+    if (!config.get('install')) {
+      config.set('install', defaults.install);
     }
   } catch (err) {
     console.log(err);

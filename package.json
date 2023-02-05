@@ -1,7 +1,7 @@
 {
   "name": "@dxsixpc/create",
-  "version": "0.0.3",
-  "description": "创建应用脚手架",
+  "version": "0.0.4",
+  "description": "脚手架",
   "homepage": "https://dxsixpc.github.io/create",
   "repository": {
     "type": "git",
@@ -12,12 +12,13 @@
     "name": "dxsixpc",
     "email": "desixpc@gmail.com"
   },
-  "main": "src/index.mjs",
+  "main": "dist/index.mjs",
   "bin": {
-    "@dxsixpc/create": "src/index.mjs"
+    "@dxsixpc/create": "dist/index.mjs"
   },
   "files": [
-    "dist"
+    "dist",
+    "template"
   ],
   "scripts": {
     "build": "father build",
@@ -55,6 +56,8 @@
     }
   },
   "dependencies": {
+    "@babel/runtime": "^7.20.13",
+    "@dxsixpc/create": "^0.0.4-beta.2",
     "chalk": "^5.2.0",
     "commander": "^10.0.0",
     "conf": "^11.0.1",

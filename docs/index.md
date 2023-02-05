@@ -3,8 +3,8 @@ hero:
   title: create
   description: 脚手架
   actions:
-    - text: Hello
+    - text: 快速开始
       link: /
-    - text: World
+    - text: 文档
       link: /
 ---

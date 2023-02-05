@@ -2,12 +2,15 @@
 
 [![NPM version](https://img.shields.io/npm/v/@dxsixpc/create.svg?style=flat)](https://npmjs.org/package/@dxsixpc/create)
 [![NPM downloads](http://img.shields.io/npm/dm/@dxsixpc/create.svg?style=flat)](https://npmjs.org/package/@dxsixpc/create)
+[![dumi](https://img.shields.io/badge/docs%20by-dumi-blue)](https://github.com/umijs/dumi)
 
 create cli
 
-## Usage
+## 使用
 
-TODO
+```shell
+npx @dxsixpc/create
+```
 
 ## Options
 

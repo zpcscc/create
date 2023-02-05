@@ -3,43 +3,49 @@
 import chalk from 'chalk';
 import { program } from 'commander';
 import { readJson } from 'fs-extra/esm';
-import { resolve } from 'path';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
 import createLibrary from './createLibrary/index.mjs';
-import getDefaultLibraryParams from './helpers/get-default-library-params.mjs';
-import promptLibraryParams from './helpers/prompt-library-params.mjs';
+import getDefaultLibraryParams from './helpers/getDefaultLibraryParams.mjs';
+import promptLibraryParams from './helpers/promptLibraryParams.mjs';
 
+// 获取当前文件的绝对路径
+const filename = fileURLToPath(import.meta.url);
+// 获取当前文件目录绝对路径
+const fileDirname = dirname(filename);
 // 读取package.json文件
-const { version } = await readJson(resolve('package.json'));
+const { version } = await readJson(join(fileDirname, '../', 'package.json'));
+// 获取默认仓库配置
 const defaults = await getDefaultLibraryParams();
 
-// 用于分析命令，解析参数
+// 用于分析命令，解析参数。 输入 --help 会返回下列提示
 program
   .name('create')
   .version(version)
   .usage('[options] [package name]')
   .option('-d, --desc <string>', 'package description', defaults.description)
-  .option('-a, --author <string>', 'package author', defaults.author)
-  .option('-l, --license <string>', 'package license', defaults.license)
+  .option('-a, --author <string>', 'github 昵称', defaults.author)
   .option('-r, --repository <string>', 'package repository')
-  .option('-g, --no-git', '不使用 git init')
+  .option('-i, --install <y/n>', '使用 <npm|yarn> install 初始化仓库', defaults.install)
+  .option('-g, --use-git <y/n>', '使用 git init 初始化仓库', defaults.git)
   .option('-m, --manager <npm|yarn>', '选择需要使用的包管理器', /^(npm|yarn)$/, defaults.manager)
   .option(
-    '-t, --template <dumi-react|react-base|react-rollup>',
+    '-t, --template <react-base|react-rollup|dumi-react>',
     '选择需要使用的模板',
-    /^(dumi-react|react-base|react-rollup)$/,
+    /^(react-base|react-rollup|dumi-react)$/,
     defaults.template,
   )
-  .option('-s, --skip-prompts', '跳过所有提示 (必须提供包名)')
+  .option('-s, --skip-prompts', '跳过所有问题 (必须提供包名)')
   .parse(process.argv);
 
 const opts = {
   description: program.desc,
   author: program.author,
-  license: program.license,
   repository: program.repository,
   manager: program.manager,
   template: program.template,
   skipPrompts: program.skipPrompts,
+  install: program.install,
   git: program.git,
 };
 
@@ -67,10 +73,8 @@ const params = await promptLibraryParams(opts);
 const dest = await createLibrary(params);
 
 console.log(`
-    您的包创建在 ${dest}.
+    您的 package 创建在 ${dest}.
 
-    开始运行，输入以下命令:
-    $ ${chalk.cyan(
-      `cd ${params.shortName} && ${params.manager} start`,
-    )}
+    开始运行，复制以下命令到终端执行:
+    $ ${chalk.cyan(`cd ${params.shortName} && ${params.manager} start`)}
   `);

@@ -12,7 +12,7 @@ const copyTemplateFile = async (opts) => {
 
   const fileRelativePath = path.relative(source, file).replace(/\\/g, '/');
 
-  if (fileRelativePath.startsWith('.git') || fileRelativePath.startsWith('node_modules')) {
+  if (fileRelativePath.startsWith('node_modules')) {
     return;
   }
 
