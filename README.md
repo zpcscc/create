@@ -4,40 +4,44 @@
 [![NPM downloads](http://img.shields.io/npm/dm/@dxsixpc/create.svg?style=flat)](https://npmjs.org/package/@dxsixpc/create)
 [![dumi](https://img.shields.io/badge/docs%20by-dumi-blue)](https://github.com/umijs/dumi)
 
-create cli
+# 简介
+
+## 前端项目脚手架
+
+> 快速生成 react 项目
 
 ## 使用
+
+#### 全局安装
+
+```shell
+npm install -g @dxsixpc/create
+```
+
+全局安装完成后，可直接使用 create 命令
+
+```shell
+create
+```
+
+![create](static/img/create.png)
+
+#### 通过 npx 直接使用
 
 ```shell
 npx @dxsixpc/create
 ```
 
-## Options
+![npx_@dxsixpc-create](static/img/npx_@dxsixpc-create.png)
 
-TODO
+#### 命令参数
 
-## Development
-
-```bash
-# install dependencies
-$ npm install
-
-# develop library by docs demo
-$ npm start
-
-# build library source code
-$ npm run build
-
-# build library source code in watch mode
-$ npm run build:watch
-
-# build docs
-$ npm run docs:build
-
-# check your project for potential problems
-$ npm run doctor
+```shell
+npx @dxsixpc/create --help
 ```
 
-## LICENSE
+![help](static/img/help.png)
 
-MIT
+## License
+
+MIT © [dxsixpc](https://github.com/dxsixpc)
