@@ -26,9 +26,9 @@ program
   .option('-d, --desc <string>', 'package description', defaults.description)
   .option('-a, --author <string>', 'github 昵称', defaults.author)
   .option('-r, --repository <string>', 'package repository')
-  .option('-i, --install <y/n>', '使用 <npm|yarn> install 初始化仓库', defaults.install)
+  .option('-i, --install <y/n>', '使用 <npm|yarn|pnpm> install 初始化仓库', defaults.install)
   .option('-g, --use-git <y/n>', '使用 git init 初始化仓库', defaults.git)
-  .option('-m, --manager <npm|yarn>', '选择需要使用的包管理器', /^(npm|yarn)$/, defaults.manager)
+  .option('-m, --manager <npm|yarn|pnpm>', '选择需要使用的包管理器', /^(npm|yarn|pnpm)$/, defaults.manager)
   .option(
     '-t, --template <react-base|react-rollup|dumi-react>',
     '选择需要使用的模板',

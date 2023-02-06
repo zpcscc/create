@@ -65,13 +65,13 @@ const promptLibraryParams = async (opts) => {
       type: 'list',
       name: 'manager',
       message: '请选择包管理器',
-      choices: ['npm', 'yarn'],
+      choices: ['npm', 'yarn', 'pnpm'],
       default: opts.manager,
     },
     {
       type: 'input',
       name: 'install',
-      message: '使用 <npm|yarn> install 安装依赖 <y/n>',
+      message: '使用 <npm|yarn|pnpm> install 安装依赖 <y/n>',
       default: opts.install,
     },
     {
