@@ -12,8 +12,8 @@ const getDefaultLibraryParams = async () => {
     repository: (info) => `https://github.com/${info.author}/${info.name}`,
     manager: config.get('manager', 'npm'),
     template: config.get('template', 'react-base'),
-    install: config.get('install', 'y'),
-    git: config.get('git', 'y'),
+    install: config.get('install', true),
+    git: config.get('git', true),
   };
 
   try {

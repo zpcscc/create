@@ -58,7 +58,7 @@ const promptLibraryParams = async (opts) => {
       type: 'list',
       name: 'template',
       message: '请选择模板',
-      choices: ['react-base', 'react-rollup', 'dumi-react'],
+      choices: ['react-base', 'react-rollup-app', 'react-rollup-lib', 'dumi-react'],
       default: opts.template,
     },
     {
@@ -69,15 +69,15 @@ const promptLibraryParams = async (opts) => {
       default: opts.manager,
     },
     {
-      type: 'input',
+      type: 'confirm',
       name: 'install',
-      message: '使用 <npm|yarn|pnpm> install 安装依赖 <y/n>',
+      message: '是否使用 <npm|yarn|pnpm> install 安装依赖?',
       default: opts.install,
     },
     {
-      type: 'input',
+      type: 'confirm',
       name: 'git',
-      message: '使用 git init 初始化 package <y/n>',
+      message: '是否使用 git init 初始化 package?',
       default: opts.git,
     },
   ]);

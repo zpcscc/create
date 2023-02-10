@@ -2,6 +2,7 @@
 
 import chalk from 'chalk';
 import { program } from 'commander';
+import fs from 'fs-extra';
 import { readJson } from 'fs-extra/esm';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
@@ -17,6 +18,10 @@ const fileDirname = dirname(filename);
 const { version } = await readJson(join(fileDirname, '../', 'package.json'));
 // 获取默认仓库配置
 const defaults = await getDefaultLibraryParams();
+// 模板名称列表
+const templateNameList = fs
+  .readdirSync(join(fileDirname, '../', 'template'))
+  .filter((name) => name !== '.DS_Store');
 
 // 用于分析命令，解析参数。 输入 --help 会返回下列提示
 program
@@ -28,9 +33,14 @@ program
   .option('-r, --repository <string>', 'package repository')
   .option('-i, --install <y/n>', '使用 <npm|yarn|pnpm> install 初始化仓库', defaults.install)
   .option('-g, --use-git <y/n>', '使用 git init 初始化仓库', defaults.git)
-  .option('-m, --manager <npm|yarn|pnpm>', '选择需要使用的包管理器', /^(npm|yarn|pnpm)$/, defaults.manager)
   .option(
-    '-t, --template <react-base|react-rollup|dumi-react>',
+    '-m, --manager <npm|yarn|pnpm>',
+    '选择需要使用的包管理器',
+    /^(npm|yarn|pnpm)$/,
+    defaults.manager,
+  )
+  .option(
+    `-t, --template <${templateNameList.join('|')}>`,
     '选择需要使用的模板',
     /^(react-base|react-rollup|dumi-react)$/,
     defaults.template,

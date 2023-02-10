@@ -42,14 +42,14 @@ const createLibrary = async (info) => {
   copySpinner.succeed();
 
   // 安装依赖
-  if (install === 'y') {
+  if (install) {
     const installSpinner = ora(`执行 ${manager} install ,这需要一点时间。。。`).start();
     await initPackageManagerRoot({ dest, info });
     installSpinner.succeed();
   }
 
   // 初始化git
-  if (git === 'y') {
+  if (git) {
     const gitSpinner = ora('初始化git仓库').start();
     await initGitRepo({ dest });
     gitSpinner.succeed();

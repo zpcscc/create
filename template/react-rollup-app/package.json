@@ -1,16 +1,12 @@
 {
-  "name": "name",
+  "name": "react-rollup-app",
   "version": "0.0.1",
-  "private": true,
-  "description": "description",
-  "repository": "repository",
-  "license": "MIT",
-  "author": "author",
+  "private": false,
   "scripts": {
-    "build": "react-scripts build",
+    "build": "rollup -c",
     "commit": "git add . && git-cz",
-    "dev": "npm run start",
-    "start": "react-scripts start"
+    "dev": "rollup -c -w",
+    "start": "npm run dev"
   },
   "config": {
     "commitizen": {
@@ -30,21 +26,21 @@
     ]
   },
   "dependencies": {
+    "@emotion/react": "^11.0.0-rc.0",
+    "@emotion/styled": "^11.10.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tslib": "^2.5.0"
   },
   "devDependencies": {
-    "@babel/core": ">=7.0.0-0 <8.0.0",
-    "@babel/plugin-syntax-flow": "^7.14.5",
-    "@babel/plugin-transform-react-jsx": "^7.14.9",
+    "@babel/core": ">=7.0.0 <8.0.0",
     "@commitlint/cz-commitlint": "^17.4.2",
-    "@dxsixpc/configs": "^0.3.0",
+    "@dxsixpc/configs": "0.3.0",
     "@types/node": "^18.13.0",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "commitizen": "^4.0.3",
     "inquirer": "^8.0.0",
-    "react-scripts": "5.0.1",
-    "typescript": "^4.9.5"
+    "rollup": "^3.15.0"
   }
 }
