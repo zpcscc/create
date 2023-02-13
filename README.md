@@ -2,11 +2,10 @@
 
 [![NPM version](https://img.shields.io/npm/v/@dxsixpc/create.svg?style=flat)](https://npmjs.org/package/@dxsixpc/create)
 [![NPM downloads](http://img.shields.io/npm/dm/@dxsixpc/create.svg?style=flat)](https://npmjs.org/package/@dxsixpc/create)
-[![dumi](https://img.shields.io/badge/docs%20by-dumi-blue)](https://github.com/umijs/dumi)
 
-# 简介
+## 简介
 
-## 前端项目脚手架
+### 前端项目脚手架
 
 > 快速生成 react 项目
 
@@ -41,6 +40,65 @@ npx @dxsixpc/create --help
 ```
 
 ![help](static/img/help.png)
+
+## 开发
+
+### 脚手架开发
+
+#### 脚手架调试运行
+
+##### 方式一：
+
+```shell
+// 将本地项目链接到全局
+npm link
+// 全局可使用create命令执行
+create
+```
+
+##### 方式二：
+
+```shell
+// 直接使用node运行代码
+node src/index.mjs
+```
+
+#### 脚手架代码打包发布
+
+```shell
+// 打包
+npm run build
+// 发布
+npm publish
+```
+
+### 文档开发
+
+#### 文档调试运行
+
+```shell
+npm run start
+或
+npm run dev
+```
+
+#### 文档打包
+
+```shell
+npm run docs:build
+```
+
+#### 文档发布
+
+```shell
+npm run docs:deploy
+```
+
+#### 文档一键打包发布
+
+```shell
+npm run deploy
+```
 
 ## License
 

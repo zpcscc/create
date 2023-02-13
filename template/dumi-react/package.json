@@ -2,10 +2,10 @@
   "name": "name",
   "version": "0.0.1",
   "description": "description",
-  "homepage": "https://dxsixpc.github.io/create",
+  "homepage": "https://dxsixpc.github.io/dumi-react",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dxsixpc/create"
+    "url": "git+https://github.com/dxsixpc/dumi-react"
   },
   "license": "MIT",
   "author": "author",
@@ -57,7 +57,7 @@
     "dumi": "^2.1.9",
     "eslint": "^8.33.0",
     "father": "^4.1.4",
-    "inquirer": "^9.1.4",
+    "inquirer": "^8.0.0",
     "lint-staged": "^13.1.1",
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
