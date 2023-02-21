@@ -3,7 +3,7 @@ import mkdirp from 'make-dir';
 import path from 'path';
 
 // 模板文件黑名单。不需要导出的具体文件
-const templateBlacklist = new Set(['.git', 'dist', 'package-lock.json']);
+const templateBlacklist = new Set(['.git', 'dist', 'package-lock.json', 'pnpm-lock.yaml']);
 
 // 复制模板文件
 const copyTemplateFile = async (opts) => {

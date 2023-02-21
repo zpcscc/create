@@ -1,9 +1,9 @@
 import React from 'react';
-import './App.css';
+import { Wrapper } from './Styled';
 
 function App() {
   return (
-    <div className='App'>
+    <Wrapper>
       <header className='App-header'>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
@@ -17,7 +17,7 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
+    </Wrapper>
   );
 }
 

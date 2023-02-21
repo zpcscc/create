@@ -1,17 +1,14 @@
 {
-  "name": "@dxsixpc/create",
+  "name": "name",
   "version": "0.0.1",
-  "description": "创建应用脚手架",
-  "homepage": "https://dxsixpc.github.io/create",
+  "description": "description",
+  "homepage": "https://dxsixpc.github.io/dumi-react",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dxsixpc/create"
+    "url": "git+https://github.com/dxsixpc/dumi-react"
   },
   "license": "MIT",
-  "author": {
-    "name": "dxsixpc",
-    "email": "desixpc@gmail.com"
-  },
+  "author": "author",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -26,10 +23,6 @@
     "docs:build": "dumi build",
     "docs:deploy": "gh-pages -d docs-dist",
     "doctor": "father doctor",
-    "lint": "npm run lint:es && npm run lint:css",
-    "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",
-    "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
-    "prepare": "husky install && dumi setup",
     "prepublishOnly": "father doctor && npm run build",
     "start": "npm run dev"
   },
@@ -56,14 +49,25 @@
     }
   },
   "devDependencies": {
-    "@dxsixpc/configs": "^0.2.6",
-    "@umijs/lint": "^4.0.0",
-    "dumi": "^2.0.2",
-    "father": "^4.1.0",
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "@babel/core": "^7.20.12",
+    "@commitlint/cz-commitlint": "^17.4.2",
+    "@dxsixpc/configs": "^0.3.0",
+    "@umijs/lint": "^4.0.51",
+    "commitizen": "^4.0.3",
+    "dumi": "^2.1.9",
+    "eslint": "^8.33.0",
+    "father": "^4.1.4",
+    "inquirer": "^8.0.0",
+    "lint-staged": "^13.1.1",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-is": "^18.2.0",
+    "styled-components": "^5.3.6",
+    "stylelint": "^15.0.0",
+    "typescript": "^4.9.5",
+    "webpack": "^5.75.0"
   },
   "peerDependencies": {
     "react": ">=16.9.0",

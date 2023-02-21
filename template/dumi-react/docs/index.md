@@ -1,10 +1,10 @@
 ---
 hero:
-  title: create
-  description: 脚手架
+  title: dumi
+  description: dumi-react
   actions:
     - text: Hello
-      link: /
+      link: /guide
     - text: World
       link: /
 ---
