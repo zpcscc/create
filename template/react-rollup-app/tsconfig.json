@@ -1,3 +1,7 @@
 {
-  "extends": "@dxsixpc/configs/tsconfig"
+  "extends": "@dxsixpc/configs/tsconfig",
+  "compilerOptions": {
+    // 打包输出目录
+    "outDir": "dist"
+  }
 }

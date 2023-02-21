@@ -10,7 +10,7 @@ const getDefaultLibraryParams = async () => {
     description: 'Made with @dxsixpc/create',
     author: config.get('author'),
     repository: (info) => `https://github.com/${info.author}/${info.name}`,
-    manager: config.get('manager', 'npm'),
+    manager: config.get('manager', 'pnpm'),
     template: config.get('template', 'react-base'),
     install: config.get('install', true),
     git: config.get('git', true),
