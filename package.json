@@ -3,10 +3,7 @@
   "version": "0.2.0",
   "description": "脚手架",
   "homepage": "https://dxsixpc.github.io/create",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dxsixpc/create"
-  },
+  "repository": "https://github.com/dxsixpc/create",
   "license": "MIT",
   "author": {
     "name": "dxsixpc",
@@ -24,14 +21,14 @@
     "build": "father build",
     "build:watch": "father dev",
     "commit": "git add . && git-cz",
-    "deploy": "npm run docs:build && npm run docs:deploy",
+    "deploy": "pnpm run docs:build && pnpm run docs:deploy",
     "dev": "dumi dev",
     "docs:build": "dumi build",
     "docs:deploy": "gh-pages -d docs-dist",
     "doctor": "father doctor",
     "prepare": "husky install && dumi setup",
-    "prepublishOnly": "father doctor && npm run build",
-    "start": "npm run dev"
+    "prepublishOnly": "father doctor && pnpm run build",
+    "start": "pnpm run dev"
   },
   "config": {
     "commitizen": {
