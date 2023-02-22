@@ -23,7 +23,6 @@ npm install -g @dxsixpc/create
 create
 ```
 
-![create](static/img/create.png)
 
 #### 通过 npx 直接使用
 
@@ -31,7 +30,6 @@ create
 npx @dxsixpc/create
 ```
 
-![npx_@dxsixpc-create](static/img/npx_@dxsixpc-create.png)
 
 #### 命令参数
 
@@ -39,7 +37,6 @@ npx @dxsixpc/create
 npx @dxsixpc/create --help
 ```
 
-![help](static/img/help.png)
 
 ## 开发
 

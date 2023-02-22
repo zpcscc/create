@@ -2,6 +2,7 @@
   "extends": "@dxsixpc/configs/tsconfig",
   "compilerOptions": {
     "baseUrl": ".",
+    "outDir": "dist",
     "paths": {
       "@@/*": [".dumi/tmp/*"],
       "@dxsixpc/create": ["src"],

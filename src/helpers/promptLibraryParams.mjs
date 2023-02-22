@@ -58,7 +58,7 @@ const promptLibraryParams = async (opts) => {
       type: 'list',
       name: 'template',
       message: '请选择模板',
-      choices: ['react-base', 'react-rollup-app', 'react-rollup-lib', 'dumi-react'],
+      choices: opts.templateNameList,
       default: opts.template,
     },
     {

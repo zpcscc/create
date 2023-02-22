@@ -31,8 +31,6 @@ program
   .option('-d, --desc <string>', 'package description', defaults.description)
   .option('-a, --author <string>', 'github 昵称', defaults.author)
   .option('-r, --repository <string>', 'package repository')
-  .option('-i, --install <y/n>', '使用 <npm|yarn|pnpm> install 初始化仓库', defaults.install)
-  .option('-g, --use-git <y/n>', '使用 git init 初始化仓库', defaults.git)
   .option(
     '-m, --manager <npm|yarn|pnpm>',
     '选择需要使用的包管理器',
@@ -45,7 +43,6 @@ program
     /^(react-base|react-rollup|dumi-react)$/,
     defaults.template,
   )
-  .option('-s, --skip-prompts', '跳过所有问题 (必须提供包名)')
   .parse(process.argv);
 
 const opts = {
@@ -54,9 +51,9 @@ const opts = {
   repository: program.repository,
   manager: program.manager,
   template: program.template,
-  skipPrompts: program.skipPrompts,
-  install: program.install,
-  git: program.git,
+  install: defaults.install,
+  git: defaults.git,
+  templateNameList,
 };
 
 // 为opts中的未填项赋默认值
@@ -83,8 +80,12 @@ const params = await promptLibraryParams(opts);
 const dest = await createLibrary(params);
 
 console.log(`
-    您的 package 创建在 ${dest}.
+  您的 package 创建在 ${dest}.
 
-    开始运行，复制以下命令到终端执行:
-    $ ${chalk.cyan(`cd ${params.shortName} && ${params.manager} start`)}
-  `);
+  开始运行，复制以下命令到终端执行:
+  $ ${chalk.cyan(
+    `cd ${params.shortName} && ${!params.install ? params.manager + ' install &&' : ''} ${
+      params.manager
+    } start`,
+  )}
+`);
