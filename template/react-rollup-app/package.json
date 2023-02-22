@@ -6,7 +6,8 @@
     "build": "rollup -c",
     "commit": "git add . && git-cz",
     "dev": "rollup -c -w",
-    "start": "npm run dev"
+    "start": "npm run dev",
+    "stylelint": "stylelint **/*.css"
   },
   "config": {
     "commitizen": {
@@ -34,7 +35,7 @@
   "devDependencies": {
     "@babel/core": "^7.21.0",
     "@commitlint/cz-commitlint": "^17.4.4",
-    "@dxsixpc/configs": "^0.3.3",
+    "@dxsixpc/configs": "^0.4.5",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-eslint": "^9.0.3",

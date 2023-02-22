@@ -7,4 +7,6 @@ hero:
       link: /started
     - text: 模板文档
       link: /template/dumi-react
+    - text: 博客
+      link: https://dxsixpc.github.io/
 ---

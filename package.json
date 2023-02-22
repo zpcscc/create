@@ -1,6 +1,6 @@
 {
   "name": "@dxsixpc/create",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "脚手架",
   "homepage": "https://dxsixpc.github.io/create",
   "repository": {
@@ -10,7 +10,7 @@
   "license": "MIT",
   "author": {
     "name": "dxsixpc",
-    "email": "desixpc@gmail.com"
+    "email": "dxsixpc@gmail.com"
   },
   "main": "dist/index.mjs",
   "bin": {
@@ -32,23 +32,6 @@
     "prepare": "husky install && dumi setup",
     "prepublishOnly": "father doctor && npm run build",
     "start": "npm run dev"
-  },
-  "lint-staged": {
-    "*.{md,json}": [
-      "prettier --write --no-error-on-unmatched-pattern"
-    ],
-    "*.{css,less}": [
-      "stylelint --fix",
-      "prettier --write"
-    ],
-    "*.{js,jsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{ts,tsx}": [
-      "eslint --fix",
-      "prettier --parser=typescript --write"
-    ]
   },
   "config": {
     "commitizen": {
@@ -74,9 +57,9 @@
   "devDependencies": {
     "@babel/core": "^7.21.0",
     "@commitlint/cz-commitlint": "^17.4.4",
-    "@dxsixpc/configs": "^0.3.3",
+    "@dxsixpc/configs": "^0.4.4",
     "commitizen": "^4.3.0",
-    "dumi": "^2.1.10",
+    "dumi": "^2.1.11",
     "eslint": "^8.34.0",
     "father": "^4.1.5",
     "gh-pages": "^5.0.0",
