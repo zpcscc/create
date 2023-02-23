@@ -7,8 +7,9 @@ export default defineConfig({
   themeConfig: {
     name,
     socialLinks: {
-      github: 'https://github.com/dxsixpc/create',
+      github: `https://github.com/dxsixpc/${name}`,
     },
+    logo: `/${name}/logo.png`,
   },
   base: `/${name}/`,
   publicPath: `/${name}/`,
