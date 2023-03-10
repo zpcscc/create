@@ -1,6 +1,6 @@
 import { Wrapper } from './Styled';
 
-function App() {
+const App = () => {
   return (
     <Wrapper>
       <header className='App-header'>
@@ -18,6 +18,6 @@ function App() {
       </header>
     </Wrapper>
   );
-}
+};
 
 export default App;

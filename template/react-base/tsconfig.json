@@ -2,5 +2,6 @@
   "extends": "@dxsixpc/configs/tsconfig",
   "compilerOptions": {
     "outDir": "dist"
-  }
+  },
+  "include": ["src/**/*", ".eslintrc.js"]
 }

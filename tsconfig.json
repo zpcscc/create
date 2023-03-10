@@ -9,5 +9,5 @@
       "@dxsixpc/create/*": ["src/*", "*"]
     }
   },
-  "include": [".dumi/**/*", ".dumirc.ts", "src/**/*"]
+  "include": [".dumi/**/*", ".dumirc.ts", "src/**/*", ".eslintrc.js", "commitlint.config.js"]
 }

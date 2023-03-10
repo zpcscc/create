@@ -2,11 +2,10 @@
   "extends": "@dxsixpc/configs/tsconfig",
   "compilerOptions": {
     "baseUrl": ".",
+    "outDir": "dist",
     "paths": {
-      "@@/*": [".dumi/tmp/*"],
-      "@dxsixpc/create": ["src"],
-      "@dxsixpc/create/*": ["src/*", "*"]
+      "@@/*": [".dumi/tmp/*"]
     }
   },
-  "include": [".dumi/**/*", ".dumirc.ts", "src/**/*"]
+  "include": [".dumi/**/*", ".dumirc.ts", "src/**/*", ".eslintrc.js"]
 }

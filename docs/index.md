@@ -1,4 +1,5 @@
 ---
+title: 首页
 hero:
   title: create
   description: 脚手架
