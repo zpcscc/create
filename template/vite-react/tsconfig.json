@@ -1,5 +1,9 @@
 {
   "extends": "@dxsixpc/configs/tsconfig",
-  "include": ["src"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist"
+  },
+  "include": ["src/**/*", ".eslintrc.js", "vite.config.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
