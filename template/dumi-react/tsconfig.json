@@ -5,7 +5,8 @@
     "outDir": "dist",
     "paths": {
       "@@/*": [".dumi/tmp/*"]
-    }
+    },
+    "types": ["react"]
   },
   "include": [".dumi/**/*", ".dumirc.ts", "src/**/*", ".eslintrc.js"]
 }
